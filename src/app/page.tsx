@@ -1,0 +1,21 @@
+import { AppointmentProvider } from '@/components/appointment-provider';
+import { Header } from '@/components/header';
+import { Hero } from '@/components/hero';
+import { About } from '@/components/about';
+import { Services } from '@/components/services';
+import { Ritual } from '@/components/ritual';
+import { Gallery } from '@/components/gallery';
+import { Invitation } from '@/components/invitation';
+import { Visit } from '@/components/visit';
+import { FAQ } from '@/components/faq';
+import { Footer } from '@/components/footer';
+import { Announcement, ServiceRibbon, FloatingCall } from '@/components/decoration';
+
+export default function HomePage() {
+  return <AppointmentProvider>
+    <a className="skip" href="#main">Skip to content</a>
+    <Announcement /><Header />
+    <main id="main"><Hero /><ServiceRibbon /><About /><Services /><Ritual /><Gallery /><Invitation /><Visit /><FAQ /></main>
+    <Footer /><FloatingCall />
+  </AppointmentProvider>;
+}

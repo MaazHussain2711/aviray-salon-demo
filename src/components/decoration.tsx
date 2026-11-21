@@ -1,0 +1,3 @@
+export function Announcement() { return (<div className="announcement"><span>YOUR EVERYDAY, A LITTLE MORE BEAUTIFUL.</span><a href="#visit">Raghuvanahalli, Bengaluru <span aria-hidden="true">↗</span></a></div>); }
+export function ServiceRibbon() { return (<div className="service-ribbon" aria-hidden="true"><span>HAIR</span><i>✳</i><span>SKIN</span><i>✳</i><span>NAILS</span><i>✳</i><span>BRIDAL</span><i>✳</i><span>GROOMING</span><i>✳</i><span>YOU</span></div>); }
+export function FloatingCall() { return (<a className="floating-call" href="tel:+919980531469" aria-label="Call AVIRAY salon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3 4 5c-2 4 7 15 12 15l4-3-4-4-3 2c-2-1-4-3-5-5l2-3-3-4Z"></path></svg><span>Let’s talk</span></a>); }
