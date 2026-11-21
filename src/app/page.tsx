@@ -10,9 +10,11 @@ import { Visit } from '@/components/visit';
 import { FAQ } from '@/components/faq';
 import { Footer } from '@/components/footer';
 import { Announcement, ServiceRibbon, FloatingCall } from '@/components/decoration';
+import { MotionEnhancements } from '@/components/motion-enhancements';
 
 export default function HomePage() {
   return <AppointmentProvider>
+    <MotionEnhancements />
     <a className="skip" href="#main">Skip to content</a>
     <Announcement /><Header />
     <main id="main"><Hero /><ServiceRibbon /><About /><Services /><Ritual /><Gallery /><Invitation /><Visit /><FAQ /></main>
