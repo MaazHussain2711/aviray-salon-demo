@@ -26,12 +26,6 @@ jobs:
         run: npm audit --omit=dev --audit-level=high
       - name: Lint
         run: npm run lint
-      - name: Set project Pages base path
-        run: |
-          REPO_NAME="${GITHUB_REPOSITORY#*/}"
-          if [[ "$REPO_NAME" != "${GITHUB_REPOSITORY_OWNER}.github.io" ]]; then
-            echo "NEXT_PUBLIC_BASE_PATH=/$REPO_NAME" >> "$GITHUB_ENV"
-          fi
       - name: Build static export
         run: npm run build
       - name: Preserve build for launch review
