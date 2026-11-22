@@ -1,14 +1,14 @@
 name: Build and deploy AVIRAY
 on:
   push:
-    branches: [main]
+    branches: [main, launch-review]
   workflow_dispatch:
 permissions:
   contents: read
   pages: write
   id-token: write
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   build:
@@ -22,6 +22,8 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Check types
         run: npm run typecheck
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high
       - name: Lint
         run: npm run lint
       - name: Set project Pages base path
@@ -32,11 +34,19 @@ jobs:
           fi
       - name: Build static export
         run: npm run build
+      - name: Preserve build for launch review
+        uses: actions/upload-artifact@v4
+        with:
+          name: launch-review-build
+          path: |
+            out
+            package-lock.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:

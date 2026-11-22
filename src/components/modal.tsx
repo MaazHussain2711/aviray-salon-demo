@@ -14,7 +14,7 @@ export function Modal({ open, onClose, labelledBy, id, children }: {
     document.body.classList.add('modal-open');
     return () => {
       dialog.close();
-      document.body.classList.remove('modal-open');
+      if (!document.querySelector('dialog[open]')) document.body.classList.remove('modal-open');
       previousFocus?.focus();
     };
   }, [open]);

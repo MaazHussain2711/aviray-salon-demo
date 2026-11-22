@@ -1,5 +1,7 @@
 export const privacyParagraphs = [
-  "This is a client demonstration website. The service descriptions are proposed content, and the salon should confirm its service menu, contact number, and address before launch. Editorial photos illustrate the design and do not represent salon clients, staff, or premises.",
-  "The enquiry form does not save or submit your details to a website server. When you choose to continue to WhatsApp, your entered name, preferred date, service, and note are included in the message URL sent to WhatsApp. You decide whether to send the message there.",
-  "External fonts and photos load from Google Fonts and Unsplash. Phone, WhatsApp, and map links open services with their own privacy policies. This demo does not use analytics or marketing cookies."
+  "Your privacy matters to AVIRAY. The appointment enquiry form does not store your details on this website or submit them to a website server.",
+  "When you choose to continue to WhatsApp, your name, chosen service, preferred date, and any note you enter are included in the message link shared with WhatsApp. You can review the message there and decide whether to send it. Please avoid including sensitive personal information.",
+  "Fonts and editorial images may load from Google Fonts and Unsplash. These providers receive the connection information needed to deliver their content. Telephone, WhatsApp, and Google Maps links open services with their own privacy policies.",
+  "This website does not use analytics or marketing cookies. Images are editorial or AI-generated style inspiration and do not represent AVIRAY clients, staff, or premises.",
+  "For questions about an appointment enquiry or your information, contact AVIRAY using the telephone number provided on this website."
 ];

@@ -17,7 +17,7 @@ export function Gallery() {
       <Image src={item.src} alt={item.alt} width={700} height={1000} sizes="(max-width: 760px) 50vw, 33vw" />
       <span>{item.title} <b aria-hidden="true">↗</b></span>
     </button>)}</div>
-    <p className="image-note">Editorial imagery for this demo. Inspiration images are not examples of AVIRAY client work.</p>
+    <p className="image-note">Style inspiration. Images are not examples of AVIRAY client work.</p>
     <Modal id="lightbox" open={selected !== null} onClose={() => setSelected(null)} labelledBy="lightbox-title">
       {selected && <><Image src={selected.src} alt={selected.alt} width={900} height={1100} sizes="90vw" /><h2 id="lightbox-title">{selected.caption}</h2><p>Editorial inspiration · Not AVIRAY client work</p><BookingButton className="button" onClick={() => setSelected(null)}>Enquire about a similar look <span aria-hidden="true">↗</span></BookingButton></>}
     </Modal>

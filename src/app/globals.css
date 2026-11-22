@@ -76,3 +76,66 @@ input,select,textarea{font-size:17px;min-height:48px}
   html{scroll-behavior:auto}
   *,*:before,*:after{animation:none!important;transition:none!important}
 }
+
+/* Unisex hero and dedicated men's grooming. */
+.hero-image{object-position:50% 38%}
+.mens-grooming{background:#efe7de;border-top:1px solid var(--line)}
+.grooming-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:8%;align-items:center}
+.grooming-photos{position:relative;padding:0 14% 85px 0;min-width:0}
+.grooming-photo{margin:0;position:relative;overflow:hidden;background:#bba999}
+.grooming-photo img{height:100%;object-fit:cover;filter:saturate(.6);transition:transform .6s ease}
+.grooming-photo:hover img{transform:scale(1.035)}
+.grooming-photo-main{height:550px}
+.grooming-photo-detail{position:absolute;bottom:0;right:0;width:48%;height:300px;border:9px solid #efe7de;box-shadow:0 12px 35px #2923261a}
+.grooming-photo figcaption{position:absolute;bottom:0;left:0;right:0;padding:35px 20px 20px;background:linear-gradient(transparent,#211920b0);font-size:11px;color:var(--ivory);letter-spacing:2px}
+.grooming-photo-detail figcaption{font-size:9px;letter-spacing:1.2px;padding:30px 12px 12px}
+.grooming-menu article{display:flex;gap:24px;padding:24px 0;border-bottom:1px solid #cdbeb2}
+.grooming-menu article:first-child{padding-top:0}
+.grooming-number{color:#946f63;font-size:13px;letter-spacing:1px;padding-top:6px}
+.grooming-menu h3{font-size:34px;margin-bottom:12px}
+.grooming-menu article p{font-size:17px;line-height:1.8}
+.grooming-menu .button{margin-top:30px}
+.grooming-note{font-size:13px;margin-top:15px;max-width:40ch}
+@media(min-width:761px) and (max-width:1180px){
+  .menu-toggle{display:flex;flex-direction:column;gap:7px;background:none;border:1px solid #816c71;padding:13px 10px;min-width:44px;min-height:44px}
+  .menu-toggle span{display:block;width:20px;height:1px;background:var(--ivory)}
+  .header nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--plum);padding:25px 6% 30px;align-items:stretch;gap:0;border-top:1px solid #ffffff20}
+  .header nav.open{display:flex;flex-direction:column}
+  .header nav>a{padding:14px 0;font-size:18px}
+  .header nav .button{margin-top:15px}
+}
+@media(max-width:1000px){.grooming-layout{gap:5%}.grooming-photo-main{height:500px}.grooming-photo-detail{height:245px}.grooming-menu h3{font-size:30px}}
+@media(max-width:760px){
+  .hero-art{height:490px}.hero-image{object-position:50% 30%}
+  .grooming-layout{grid-template-columns:1fr;gap:40px}
+  .grooming-photos{padding:0 15% 55px 0}
+  .grooming-photo-main{height:370px}.grooming-photo-detail{height:220px;width:47%;border-width:6px}
+  .grooming-menu h3{font-size:30px}.grooming-menu article p{font-size:16px}
+  .grooming-menu article{gap:18px}.grooming-menu .button{width:100%;gap:15px;text-align:left}
+  .grooming-photo-main figcaption{font-size:10px}.grooming-photo-detail figcaption{font-size:8px;letter-spacing:.6px}
+}
+
+/* Keep the badge fully inside its panel, including its animated rotation. */
+.roundel{left:24px;top:32px;width:128px;height:128px;padding:16px 10px;gap:4px}
+.roundel span{font-size:10px;line-height:1.4;letter-spacing:1.4px;white-space:nowrap}
+.roundel b{font-size:34px;line-height:1}
+.grooming-photo-detail img{object-position:50% 35%}
+@media(max-width:760px){.roundel{left:18px;top:24px;width:108px;height:108px;padding:12px 8px;gap:3px}.roundel span{font-size:9px;letter-spacing:1px}.roundel b{font-size:30px}}
+
+/* Keep the grooming introduction together beneath its heading. */
+.mens-grooming .section-heading{flex-direction:column;align-items:flex-start;gap:20px}
+.mens-grooming .section-heading>p{max-width:52ch;flex-shrink:1}
+.footer{padding-bottom:95px}
+
+/* Launch accessibility, small-screen spacing and privacy page. */
+.policy-page{max-width:980px;margin:0 auto;min-height:100vh}
+.policy-page>.eyebrow{margin-top:50px}
+.policy-page h1{font-size:clamp(48px,7vw,82px);line-height:1.05;letter-spacing:-2px}
+.policy-page>p{font-size:17px;line-height:1.85;margin:24px 0}
+.policy-page .policy-date{font-size:14px}
+.policy-page h2{font-size:40px;margin-top:40px}
+.policy-page p a{text-decoration:underline;text-underline-offset:4px}
+.dialog-close{min-width:44px;min-height:44px;display:grid;place-items:center;z-index:2}
+.footer-bottom{padding-right:100px}
+.grooming-menu h3{overflow-wrap:anywhere}
+@media(max-width:760px){.footer-bottom{padding-right:0}.policy-page>p{font-size:16px}.roundel{left:18px}.hero-description{overflow-wrap:break-word}}

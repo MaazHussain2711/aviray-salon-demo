@@ -20,7 +20,7 @@ export function MotionEnhancements() {
         animation.onfinish = () => animations.delete(animation);
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.about-copy, .section-heading, .service-card, .ritual-title, .ritual-steps article, .invitation-inner, .visit-copy, .location-card, .faq-list').forEach(element => observer.observe(element));
+    document.querySelectorAll('.about-copy, .section-heading, .service-card, .grooming-photos, .grooming-menu article, .ritual-title, .ritual-steps article, .invitation-inner, .visit-copy, .location-card, .faq-list').forEach(element => observer.observe(element));
     const stopMotion = () => {
       if (preference.matches) animations.forEach(animation => animation.cancel());
     };

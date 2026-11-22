@@ -11,13 +11,15 @@ import { FAQ } from '@/components/faq';
 import { Footer } from '@/components/footer';
 import { Announcement, ServiceRibbon, FloatingCall } from '@/components/decoration';
 import { MotionEnhancements } from '@/components/motion-enhancements';
+import { BusinessSchema } from '@/components/business-schema';
+import { MensGrooming } from '@/components/mens-grooming';
 
 export default function HomePage() {
   return <AppointmentProvider>
-    <MotionEnhancements />
+    <MotionEnhancements /><BusinessSchema />
     <a className="skip" href="#main">Skip to content</a>
     <Announcement /><Header />
-    <main id="main"><Hero /><ServiceRibbon /><About /><Services /><Ritual /><Gallery /><Invitation /><Visit /><FAQ /></main>
+    <main id="main"><Hero /><ServiceRibbon /><About /><Services /><MensGrooming /><Ritual /><Gallery /><Invitation /><Visit /><FAQ /></main>
     <Footer /><FloatingCall />
   </AppointmentProvider>;
 }
