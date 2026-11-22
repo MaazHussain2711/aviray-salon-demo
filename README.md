@@ -1,61 +1,35 @@
-# AVIRAY Unisex Salon · Next.js client demo
+# AVIRAY Unisex Salon
 
-A complete Next.js App Router project with React, TypeScript, and responsive styling based on AVIRAY's supplied charcoal plum and warm ivory brand.
+Next.js App Router website with React, TypeScript, responsive styling, accessible native dialogs and a static export for GitHub Pages.
 
-## Run locally
+## Development
 
-Requires Node.js 20.9 or newer (Node 22 LTS recommended).
+Use Node.js 22 LTS or newer. Run `npm ci` when the lockfile is present, or `npm install` for first setup, then `npm run dev`. Open http://localhost:3000.
 
-```sh
-npm install
-npm run dev
-```
+Checks: `npm run typecheck`, `npm run lint`, `npm audit --omit=dev --audit-level=high`, `npm run build`.
 
-Visit http://localhost:3000. To check and build:
-
-```sh
-npm run typecheck
-npm run lint
-npm run build
-npm run preview
-```
-
-The production static export is written to `out/`. `npm run preview` serves that directory at http://localhost:4173. Opening an HTML file directly is not a supported Next.js preview.
+`npm run build` exports into `out/`. `npm run preview` serves it at http://localhost:4173. Set `NEXT_PUBLIC_BASE_PATH=/aviray-salon-demo` for both build and preview to mirror project Pages, or leave it empty for a root-domain build.
 
 ## Structure
 
-| Folder | Purpose |
-| --- | --- |
-| `src/app` | App Router pages, root metadata, layout, global styling, 404 |
-| `src/components` | Hero, navigation, services, story, gallery, visit, FAQs, footer and shared modals |
-| `src/lib` | Shared contact configuration, asset helper, gallery data and privacy content |
-| `public/assets` | Approved AVIRAY logo and favicon |
-| `.github/workflows/pages.yml` | Typecheck, lint, production build and GitHub Pages deployment |
+- `src/app`: home, privacy policy, metadata, sitemap, robots and 404.
+- `src/components`: content sections and React interactions.
+- `src/lib`: salon configuration, gallery data and privacy copy.
+- `public/assets`: approved brand artwork and AI-generated unisex campaign imagery.
+- `.github/workflows/pages.yml`: dependency audit, TypeScript, lint, static build and deployment.
 
-Most content sections are Server Components rendered at build time. Interactive controls use small Client Components with React state and a shared appointment context. No HTML injection or legacy DOM event script is used.
+The `launch-review` branch builds without deploying. The `main` branch deploys only after checks succeed. GitHub Pages source must be GitHub Actions. The workflow sets the repository base path. Update `siteURL` in `src/lib/site.ts` when moving to a custom domain.
 
-## GitHub Pages
+## Operating scope
 
-Set repository Settings > Pages > Build and deployment > Source to **GitHub Actions**. Push to `main` to build and deploy. The workflow automatically sets `NEXT_PUBLIC_BASE_PATH` to the repository name for project Pages, so logo paths and Next.js bundles work beneath `/aviray-salon-demo/`.
+The owner confirmed the public phone/WhatsApp and address on 22 November 2026. Exact prices and opening hours were not supplied, so visitors are asked to contact the salon. No reviews, ratings, prices, discounts or credentials have been invented.
 
-For a custom root domain, leave `NEXT_PUBLIC_BASE_PATH` empty and configure the domain separately. For a local subpath build, set this variable before **both** the build and preview commands. Static export and unoptimized images allow the project to run on GitHub Pages without a Node.js server.
+Appointments are enquiries, with a separate review step before WhatsApp. No automatic slot confirmation, booking database, payment collection, analytics or marketing-cookie tracking is included. The salon must reply before a booking is confirmed.
 
-## Features
+Hero artwork is AI-generated and encoded as WebP. Unsplash photos are editorial inspiration, not salon client results; visitors are informed of this. The map artwork is illustrative; Google Maps supplies directions. Replace editorial imagery with approved salon photography as it becomes available.
 
-- Branded, responsive single-page experience with navigation, service cards and clear booking entry points.
-- Filterable editorial gallery and accessible native dialog lightbox.
-- Native enquiry validation and a separate review step before opening a prepared WhatsApp message.
-- Call and Google Maps links, FAQs, a privacy dialog, keyboard focus styles, reduced motion and skip navigation.
-- Metadata and a noindex setting appropriate to a client demo.
+Google Fonts supplies Cormorant Garamond and DM Sans, with local font fallbacks. Third-party requests are described in the privacy policy.
 
-## Demo boundaries
+## Release verification
 
-This is a frontend demo, not a booking backend. It stores no appointments and processes no payments. The salon must reply to an enquiry before a booking is confirmed. WhatsApp support on the listed number has not been confirmed. A future backend, authentication, CMS or payment flow requires a server-capable host or external service; GitHub Pages serves static files only.
-
-Current address and phone are provisional, based on the public AVIRAY listing at https://kaamgpt.com/company/in/bengaluru/raghuvanahalli/list-of-salons-and-spas. Confirm them with the salon before production. No ratings, reviews, prices, staff credentials or discounts have been invented. Menu and image folders shared by the user were empty when checked.
-
-The map illustration is decorative; use the Google Maps link for actual directions. Photos are editorial references from Unsplash, not AVIRAY premises, staff or client results. Replace with approved salon photos before launch. Brand artwork comes from the user-supplied Drive folder; its original file is included alongside whitespace-cropped web assets.
-
-Fonts load from Google Fonts with local fallbacks. Photos load from `images.unsplash.com`. Inspirations reviewed: https://scentlifestyle.com/ and https://www.lucapiattelli.in/; copy and layout are original.
-
-Before production: confirm menu/contact details, replace editorial photos, verify rights and privacy content, add verified social links if needed, and remove the `robots` noindex setting in `src/app/layout.tsx`.
+Check the home and privacy routes, local asset paths, mobile/desktop layouts, form validation and service preselection, gallery filtering, Escape and backdrop closing, focus restoration, and phone/Maps/WhatsApp destinations. Never send testing enquiries to the salon.
